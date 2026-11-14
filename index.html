@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyMate - Smart Learning</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>📚 StudyMate</h2>
+  <nav>
+    <a href="#notes">Notes</a>
+    <a href="#ai">AI Study</a>
+    <a href="#flashcards">Flashcards</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <h1>Learn Smarter.<br>Remember Longer.</h1>
+  <p>Your personal study assistant.</p>
+  <a href="#notes" class="hero-btn">Start Studying →</a>
+</section>
+
+<section class="stats">
+  <div class="card">📝<h2 id="noteCount">0</h2>Notes</div>
+  <div class="card">🧠<h2 id="cardCount">0</h2>Flashcards</div>
+  <div class="card">🏆<h2 id="quizCount">0</h2>Quiz Questions</div>
+</section>
+
+<section class="panel" id="notes">
+<h2>📝 My Notes</h2>
+<input id="subject" placeholder="Subject">
+<input id="noteTitle" placeholder="Note title">
+<textarea id="noteContent" placeholder="Write your notes..."></textarea>
+<button onclick="saveNote()">Save Note</button>
+<input id="search" placeholder="Search notes..." oninput="renderNotes()">
+<div id="notesList"></div>
+</section>
+
+<section class="panel" id="ai">
+<h2>🤖 AI Study Assistant</h2>
+<p>Turn your notes into easy revision material.</p>
+<textarea id="aiInput" placeholder="Paste your notes here..."></textarea>
+<select id="aiMode">
+<option value="summary">✨ Summarize notes</option>
+<option value="keypoints">📌 Important points</option>
+<option value="simple">💡 Easy explanation</option>
+</select>
+<button onclick="summarize()">Generate Summary</button>
+<div id="aiOutput" class="output hidden"></div>
+</section>
+
+<section class="panel" id="flashcards">
+<h2>🧠 Flashcards</h2>
+<input id="question" placeholder="Enter question">
+<input id="answer" placeholder="Enter answer">
+<button onclick="addCard()">Create Flashcard</button>
+<div id="flashArea"></div>
+</section>
+
+<section class="panel" id="quiz">
+<h2>🎯 Quiz Maker</h2>
+<input id="quizQuestion" placeholder="Enter question">
+<input id="o1" placeholder="Option 1">
+<input id="o2" placeholder="Option 2">
+<input id="o3" placeholder="Option 3">
+<select id="correct">
+<option value="0">Correct answer: Option 1</option>
+<option value="1">Correct answer: Option 2</option>
+<option value="2">Correct answer: Option 3</option>
+</select>
+<button onclick="addQuiz()">Add Question</button>
+<button onclick="startQuiz()">Start Quiz</button>
+<div id="quizArea"></div>
+</section>
+
+<section class="panel">
+<h2>⏱️ Focus Timer</h2>
+<h1 id="clock">25:00</h1>
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+</section>
+</main>
+
+<footer>StudyMate © 2026 | Learn Every Day ❤️</footer>
+<script src="script.js"></script>
+</body>
+</html>
